@@ -30,12 +30,14 @@ exports.CreateUsers =function(req,res,next){
 }
 
 exports.login =function(req,res,next){
-    users_model.findOne({email:{$req:req.body.email}}).then(
+    const data = req.body 
+
+    users_model.findOne({email:data.email}).then(
         users =>{
             if(!users){
                 return res.status(401).json({message:'paire login/password invalide'})
             }
-            bcrypt.compare(req.body.password ,users.password).then(
+            bcrypt.compare(data.password ,users.password).then(
                 validation =>{
                     if(!validation){
                         return res.status(401).json({message:'paire login/password invalide'})
