@@ -4,8 +4,6 @@ const jsonwebtoken = require('jsonwebtoken');
 
 const bodyParser = require('body-parser');
 
-const md5 = require('md5');
-
 const cors =require('cors');
 
 const app = express()

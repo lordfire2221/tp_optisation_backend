@@ -19,5 +19,9 @@ router.get('GetCommentaireByIdMovie/:id_movie',commentaire_controllers.GetCommen
 router.put('/UpdateCommentaire/:id',commentaire_controllers.PutCommentaire)
 router.delete('/DeleteCommentaire/:id',commentaire_controllers.DeleteCommentaire)
 
+// user router
 
+router.post('/createusers',users_controllers.CreateUsers)
+router.post('/AuthUsers',users_controllers.login)
 
+module.exports = router ;
